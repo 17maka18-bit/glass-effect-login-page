@@ -1,0 +1,382 @@
+
+/* General */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  font-family: Arial, sans-serif;
+  background: #007cf0;
+}
+
+/* Main background */
+
+.login-wrapper {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 30px 20px;
+  overflow: hidden;
+
+  background:
+    radial-gradient(
+      ellipse at 50% 45%,
+      #21b5ff 0%,
+      #008dff 45%,
+      #0067d8 100%
+    );
+}
+
+/* Figma decorations */
+
+.decorations {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.shape {
+  position: absolute;
+  display: block;
+  height: auto;
+  object-fit: contain;
+
+  filter:
+    hue-rotate(140deg)
+    saturate(1.5)
+    drop-shadow(8px 12px 12px rgba(0, 50, 150, 0.25));
+}
+
+/* Top circular decoration */
+
+.shape-1 {
+  width: 95px;
+  top: 10%;
+  left: 48%;
+  transform: rotate(-25deg);
+}
+
+/* Left cyan wave */
+
+.shape-2 {
+  width: 120px;
+  top: 35%;
+  left: 19%;
+  transform: rotate(-20deg);
+  filter:
+    drop-shadow(8px 10px 10px rgba(0, 55, 150, 0.25));
+}
+
+/* Right upper shape */
+
+.shape-3 {
+  width: 120px;
+  top: 32%;
+  right: 16%;
+  transform: rotate(25deg);
+
+  filter:
+    grayscale(1)
+    sepia(1)
+    saturate(5)
+    hue-rotate(165deg)
+    brightness(1.1)
+    drop-shadow(8px 12px 10px rgba(0, 40, 150, 0.3));
+}
+
+/* Left bottom large decoration */
+
+.shape-4 {
+  width: 250px;
+  bottom: 5%;
+  left: 5%;
+  opacity: 0.7;
+
+  filter:
+    grayscale(1)
+    sepia(1)
+    saturate(5)
+    hue-rotate(165deg)
+    brightness(0.85)
+    drop-shadow(10px 15px 12px rgba(0, 40, 150, 0.3));
+}
+
+/* Right lower small shape */
+
+.shape-5 {
+  width: 100px;
+  bottom: 25%;
+  right: 22%;
+  transform: rotate(-15deg);
+
+  filter:
+    grayscale(1)
+    sepia(1)
+    saturate(5)
+    hue-rotate(165deg)
+    brightness(1.1)
+    drop-shadow(8px 10px 10px rgba(0, 50, 150, 0.3));
+}
+
+/* Right bottom cyan decoration */
+
+.shape-6 {
+  width: 250px;
+  bottom: 6%;
+  right: -35px;
+  transform: rotate(15deg);
+
+  filter:
+    drop-shadow(8px 12px 12px rgba(0, 55, 150, 0.25));
+}
+
+/* Glass Card */
+
+.login-card {
+  position: relative;
+  z-index: 2;
+
+  width: 330px;
+  max-width: 100%;
+  padding: 30px 36px;
+
+  color: white;
+  text-align: center;
+
+  background: rgba(210, 240, 255, 0.16);
+
+  backdrop-filter: blur(25px);
+  -webkit-backdrop-filter: blur(25px);
+
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 17px;
+
+  box-shadow:
+    0 12px 35px rgba(0, 55, 150, 0.15),
+    inset 0 1px 2px rgba(255, 255, 255, 0.2);
+}
+
+/* Header */
+
+.logo {
+  font-size: 17px;
+  font-weight: bold;
+  margin-bottom: 26px;
+}
+
+h1 {
+  font-size: 22px;
+  margin-bottom: 22px;
+}
+
+/* Form */
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 11px;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  text-align: left;
+}
+
+.input-group label {
+  font-size: 11px;
+  color: white;
+}
+
+.input-group input {
+  width: 100%;
+  height: 34px;
+  padding: 0 11px;
+
+  background: white;
+  color: #123b64;
+
+  border: 1px solid transparent;
+  border-radius: 5px;
+  outline: none;
+
+  font-size: 12px;
+  transition: 0.3s;
+}
+
+.input-group input::placeholder {
+  color: #888;
+}
+
+.input-group input:focus {
+  border-color: #0077e6;
+  box-shadow: 0 0 0 3px rgba(255,255,255,0.4);
+}
+
+/* Forgot Password */
+
+.forgot-password {
+  align-self: flex-end;
+  font-size: 11px;
+  color: white;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.forgot-password:hover {
+  color: #003b82;
+  text-decoration: underline;
+}
+
+/* Sign In */
+
+.sign-in {
+  width: 100%;
+  height: 37px;
+  margin-top: 8px;
+
+  background: #004c99;
+  color: white;
+
+  border: none;
+  border-radius: 5px;
+
+  font-size: 12px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.sign-in:hover {
+  background: #00336d;
+  transform: translateY(-2px);
+}
+
+/* Social Login */
+
+.divider {
+  margin: 22px 0 15px;
+  font-size: 11px;
+}
+
+.social-login {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+}
+
+.social-login button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 62px;
+  height: 37px;
+
+  background: white;
+  color: #111;
+
+  border: none;
+  border-radius: 5px;
+
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.social-login button:hover {
+  background: #d9f6ff;
+  transform: translateY(-3px);
+}
+
+.social-login img,
+.social-login svg {
+  width: 20px;
+  height: 20px;
+  display: block;
+}
+
+/* Register */
+
+.register {
+  margin-top: 20px;
+  font-size: 10px;
+  line-height: 1.6;
+}
+
+.register a {
+  color: white;
+  font-weight: bold;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.register a:hover {
+  color: #003b82;
+  text-decoration: underline;
+}
+
+/* Responsive */
+
+@media (max-width: 600px) {
+  .shape {
+    opacity: 0.5;
+  }
+
+  .shape-2 {
+    left: -45px;
+  }
+
+  .shape-3 {
+    right: -50px;
+  }
+
+  .shape-4 {
+    left: -120px;
+  }
+
+  .shape-6 {
+    right: -120px;
+  }
+}
+
+@media (max-width: 375px) {
+  .login-wrapper {
+    padding: 20px 12px;
+  }
+
+  .login-card {
+    padding: 26px 20px;
+  }
+
+  .logo {
+    margin-bottom: 22px;
+  }
+
+  h1 {
+    font-size: 21px;
+    margin-bottom: 19px;
+  }
+}
+
+@media (max-width: 320px) {
+  .login-card {
+    padding: 22px 15px;
+  }
+
+  .social-login {
+    gap: 10px;
+  }
+
+  .social-login button {
+    width: 54px;
+  }
+}
